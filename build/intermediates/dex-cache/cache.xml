@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/ayush/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_9b64d54f1d22d0802ff4e3ba49c4bc13fabc7cb3.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="632cf2bb01c851b401accc577991865c36cc1fae">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-9.0.1_6001471d06aed5a5ecef2291f7bca2dc150349df.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f386000f91af644f751d96ab4c26be945a7dbce4">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-cast-9.0.1_c2abbe003ca37d5bbeda338618620c0ec5941c22.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-nearby/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ae63fa87d1dca092eb386a9b148a1d5d14f71253">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-nearby-9.0.1_be9b9366855fc4cedf2b2b6e2be3971356e705b2.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="cd6820c177093398f096088a6f4abc3014588e65">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appindexing-9.0.1_eeebc45514a05c0c64f6801f44e502b3836d307e.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a064025a115398c5ad4732f536548dd36b7283d6">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-identity-9.0.1_849e8360db00b6d88090a92ee26b4dd7f54b03ba.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2a816e2891e93c97db7be2bbbf941a31bb64a63e">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-9.0.1_f6e1eafec7b0af5d43502400819ed396023de1f7.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-games/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f8b563033681919f54882d4605da10861bda6974">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-games-9.0.1_8c854c9636d33daf8fa1d3bfea5925bd01d5adbc.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.android.support-mediarouter-v7-23.0.0_3f3c0214b62f80d2fba90346386088e4ab821c34.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth-base/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="20e4578cdf97486712a260ec34582334083e3a07">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-base-9.0.1_c6fdea95b29ca0ebadea7c9854384b588a08984d.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appinvite/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="eaa6b0fb1cad74c895845610bbfc8737324556e6">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-appinvite-9.0.1_d1904fcffea833bd33b9f807709d03ef8addccc9.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_af66f49f500a4a1daf724d171104dd6d4a1fb655.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads-lite/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="19a8ef100d7456c2fde021851a40506c86d14821">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-lite-9.0.1_316b2bafc433ff595f3d50d5319db4924bca64eb.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="60f1c7b6953c6c82c4733b2cd67713835ed4fc39">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-common-9.0.1_32ae16518d7296c3bea3216179263d5d3a309d43.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e51f4e3317456544915089185a40f4883addbdf1">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-maps-9.0.1_d61f0278a051c303199801e83437841c9b1a74fb.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager-api/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8751850c44515d845de08e317733f1da49e6426a">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tagmanager-api-9.0.1_3cf9ca759d459d61b36a5543ffbb8d1866fc923d.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffc3c6fc861f04d45835c9eac5cec10acc180d55">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-common-9.0.1_05b218b143f49dfe1eaef17bb244c5f754675339.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="04fc7ccb8a75c70c340122affe9a586c9512c2ee">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_f2376684336ead46df2c7fb95ca0ce8f37728d17.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aa3f026e88b5606be5cb0c7be5cf224489ede2bf">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-9.0.1_c5557eda0b597c8080afce52e955851d9f260b87.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-iid/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="babde6b32d7ab7c069a98f008b2bc795c8777fae">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-iid-9.0.1_a3d742a793551029939d6d1147d608b41cad3f1e.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b49f3f1bddb0201ac336b50bb6c66040d26f6d0d">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wearable-9.0.1_915e1fa5d14f30d9b21abedf5b9aeeec45370eea.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8d502e4a55039c7b920b5ef5f89d23060304ff8c">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-vision-9.0.1_e431ee1f8d6f6ee26045b02ff72d0e13a30db4ea.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e7895d06e98e7252de7d08c49591e4ca92a570a9">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-storage-9.0.1_69594d6426a9230413de3efde08d6b8cd800c7b9.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics-impl/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fa736dcff406efe6012e6edc61239c47a08b40f4">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-analytics-impl-9.0.1_28d9662e25ece775953d1bb5bbf2e37a45fc202f.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="13270ae22369a0d50cb6c560aeca4056f025cae6">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-9.0.1_26291220cfeb9e83715a7890a48ade6384c6ff17.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_17888b539b66c40c92c085cb360b5f4f5b3d2c9a.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_7218eafc6ddf9f7d746d2caf1eb40a38023b41ea.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="beecf0c3e72517a9f684ac49dc836b347b80de26">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-plus-9.0.1_e2279ddb30572a6cc9494ad80636f50967e012a9.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_99c9a6aa6ebf0a8e38040387dac7c1bd2dd07080.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bce13b18d5b0549a6126d6176a36cf3e53a83f3f">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-auth-module-9.0.1_0eff6806c8477327e53945b7a5171fc5c7debebb.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-wallet/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a0505314a91da9985e336c17088410f4c7085690">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-wallet-9.0.1_539626e1aef9b1d85f766ed6825337b718ce4e4e.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e711046a40e1562d85854ee09cd0a05254cb6463">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-9.0.1_f27a784dc8e1e3487ab7854f96c92c8214407481.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="03d38bb042efe3e5ce27ba66b729a9523c36d8fe">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_1486e8b1ede4d1332167d872f113b89bdf12285a.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="d01902a80cb52c283941b014b1ad4d466402ac0a">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-iid-9.0.1_b09ce8e87165a0e76a3f286f1d13e6d264eeefc4.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a3ebac72ca6befe2e900427505dbb3dd58a5ebbf">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-9.0.1_f6d91175448157b11a1fd5e282d862490426a365.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-panorama/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="af9d57d713e05d6da464c0d009325e235585f5ea">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-panorama-9.0.1_0a69ac15f079fad0e057034be7b99f0ba8380b2b.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6dcbd3a56843f14553715f22b331d017f0fabc12">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-location-9.0.1_8efe4d2d39df93c9d1c74267c615bf0df96d5ab6.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="34375e2adbbe36bc39f2b5fae55d549b9efc77e6">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-impl-9.0.1_e892ce46bb69b862209afcdf9fb105198f36a489.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-config/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="73f7a1fbc96ecb7652c004e5b2ed306688a5a84c">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-config-9.0.1_2130f5ca29ecdfe3dbe500ae8aa9f222bee2ff40.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="46cc429f8abc5cdb8bf4d7fae897159855ba5600">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/instant-run_1cb529b083eb116217ed5acd57244da6435ad8dd.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-crash/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="41216638a24a3c78b00f27b4f7ea33032c185106">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-crash-9.0.1_ffed92e7316e9aba36bbde81a4cd2c63e13fcd90.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b94d84286db4c24557b661015bc67497444a4071">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-analytics-9.0.1_bd5d6c76a38df5ac1730d7ff6dad97590bb6ed73.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1e972292f7c6bdc49935925da64f9f06d5f8b3ac">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-storage-common-9.0.1_71afa66064a9bd172ccc656f67f341cdb280d33c.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-drive/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a2d2b21282d89df001d0ac96671a33bd8c0e83f8">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-drive-9.0.1_3b9abb78c2f77b0c8d4e2a793251ff227748c17d.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_7809b118853e8d34890a3c42dfeab93743f8f7c6.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="df7b50ec047648cc71075ec1ee24d3c9cf337e41">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-messaging-9.0.1_f4b2290bf4e1d24ee444ea35fc945a845dd54a34.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-fitness/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0e848984cf0810dbcc72d7e664b8b30168d35c03">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-fitness-9.0.1_74a6dbceeffcf19409f804422813457411fc9925.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tagmanager/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2ad3e3e8810a3ea03417d19012169034dc51d021">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tagmanager-9.0.1_0efd1cc441dba00e01b414146ec0f21b58d0dcaf.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9663366e1e6f9078d60c2701090c80e9fb644a36">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-9.0.1_d81ebe5c2c31076a57f8758046360f9b654cf72b.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-safetynet/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="cc67c4553076c53f31a79fb73bce967bfcfe66d8">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-safetynet-9.0.1_acc6ab85211bc846ca8e598c9c0b45d702edd0c9.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.firebase/firebase-database-connection/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="93779beb83069c13f278b652b2206f1f24850705">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.firebase-firebase-database-connection-9.0.1_7b4d173ad5c36fb16d7c97e4085b341a94831516.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-gcm/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="bc38f0704a08802ebc398ecf13a0c9b2072dc1e5">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gcm-9.0.1_bc49773ef18e237a874a177338e324de9d80a476.jar" />
+    </item>
+    <item
+        jar="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/9.0.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a71cfcfe6d690ee7034e6303e68bc97fa5234946">
+        <dex dex="/home/ayush/AndroidStudioProjects/Splash/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-analytics-9.0.1_fc93a7f151adbdec4fae42c3ff4d5714f808c161.jar" />
+    </item>
+
+</items>
