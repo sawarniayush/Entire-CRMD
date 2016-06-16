@@ -30,10 +30,13 @@
             android:id="@+id/txtview1_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
             android:layout_alignParentLeft="true"
             android:text="@string/prompt_username"
+
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="24sp" />
 
         <EditText
             android:id="@+id/username_login"
@@ -54,7 +57,9 @@
             android:layout_below="@id/username_login"
             android:text="@string/prompt_password"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/password_login"

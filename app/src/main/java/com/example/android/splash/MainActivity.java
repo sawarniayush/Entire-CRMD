@@ -122,8 +122,8 @@ public class MainActivity extends AppCompatActivity implements
 
         mResultReceiver = new AddressResultReceiver(new Handler());
 
-        mLocationAddressTextView = (TextView) findViewById(R.id.location_address_view);
-        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        //mLocationAddressTextView = (TextView) findViewById(R.id.location_address_view);
+        //mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         mFetchAddressButton = (Button) findViewById(R.id.fetch_address_button);
 
         // Set defaults, then update using values stored in the Bundle.
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements
             // and stored in the Bundle. If it was found, display the address string in the UI.
             if (savedInstanceState.keySet().contains(LOCATION_ADDRESS_KEY)) {
                 mAddressOutput = savedInstanceState.getString(LOCATION_ADDRESS_KEY);
-                displayAddressOutput();
+                //displayAddressOutput();
             }
         }
     }
@@ -261,22 +261,18 @@ public class MainActivity extends AppCompatActivity implements
     /**
      * Updates the address in the UI.
      */
-    protected void displayAddressOutput() {
-        mLocationAddressTextView.setText(mAddressOutput);
 
-
-    }
 
     /**
      * Toggles the visibility of the progress bar. Enables or disables the Fetch Address button.
      */
     private void updateUIWidgets() {
         if (mAddressRequested) {
-            mProgressBar.setVisibility(ProgressBar.VISIBLE);
+            //mProgressBar.setVisibility(ProgressBar.VISIBLE);
             mFetchAddressButton.setEnabled(false);
 
         } else {
-            mProgressBar.setVisibility(ProgressBar.GONE);
+            //mProgressBar.setVisibility(ProgressBar.GONE);
             mFetchAddressButton.setEnabled(true);
 
 
@@ -316,14 +312,14 @@ public class MainActivity extends AppCompatActivity implements
 
             // Display the address string or an error message sent from the intent service.
             mAddressOutput = resultData.getString(Constants.RESULT_DATA_KEY);
-            displayAddressOutput();
+            //displayAddressOutput();
 
             // Show a toast message if an address was found.
             if (resultCode == Constants.SUCCESS_RESULT) {
                 showToast(getString(R.string.address_found));
                 EditText et=(EditText)findViewById(R.id.edit);
                 String msg= et.getText().toString();
-                String loc=mLocationAddressTextView.getText().toString();
+                String loc = mAddressOutput;
                 BackgroundTask bktask=new BackgroundTask(MainActivity.this);
                 TelephonyManager tm=(TelephonyManager)MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
                 String imei=tm.getDeviceId();

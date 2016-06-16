@@ -1,0 +1,6 @@
+CHANGED,C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\splash\BackgroundTask$3$override.class
+CHANGED,C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\splash\BackgroundTask$2$override.class
+CHANGED,C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\splash\BackgroundTask$override.class
+CHANGED,C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\splash\BackgroundTask$1$override.class
+CHANGED,C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\example\android\splash\BackgroundTask$4$override.class

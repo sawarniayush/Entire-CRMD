@@ -270,18 +270,23 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 } else if (code.equals("reg_false"))// reg_false that means registration failure, so corresponding message will be displayed: (here) it is a random string ("Failed!") (to be changed)
                 {
                     showDialog("Registration Failed", message, code);
+                    progressDialog.dismiss();
                 } else if (code.equals("login_true")) {
                     Intent intent = new Intent(activity, HomeActivity.class);
                     // to attach message to the intent from  the server
                     intent.putExtra("message", message);
                     activity.startActivity(intent);
+                    progressDialog.dismiss();
                 } else if (code.equals("login_false")) {
                     showDialog("Login Error", message, code);
+                    progressDialog.dismiss();
                 } else if (code.equals("report_true")) {
 
                     showDialog("Submission Successful!", message, code);
+                    progressDialog.dismiss();
                 } else if (code.equals("report_false")) {
-                    showDialog("Submission error:", message, code);
+                    showDialog("Submission error!", message, code);
+                    progressDialog.dismiss();
                 }
 
             } catch (JSONException e) {
@@ -340,7 +345,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
-                    //activity.finish();
+                    activity.finish();
                 }
             });
         }

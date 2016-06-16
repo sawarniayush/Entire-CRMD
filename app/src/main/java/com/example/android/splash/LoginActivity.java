@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
@@ -21,7 +22,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText Username, Pass;
     Button login_button;
     AlertDialog.Builder builder;
-    String imei="";
+    String imei = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,18 +54,16 @@ public class LoginActivity extends AppCompatActivity {
                     });
                     AlertDialog alertDialog = builder.create();
                     alertDialog.show();
-                }
-                else
-                {
+                } else {
                     BackgroundTask backgroundTask = new BackgroundTask(LoginActivity.this);
-                    TelephonyManager tm=(TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-                    imei=tm.getDeviceId();
+                    TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+                    imei = tm.getDeviceId();
                     /*
                      * AsyncTask has the form AsyncTask<Param, Progress, Return> with execute using the Param type.
                      * so here we are sending the @Params to the Background task with all the parameters as strings
                      */
 
-                    backgroundTask.execute("login", Username.getText().toString(), Pass.getText().toString(),imei);
+                    backgroundTask.execute("login", Username.getText().toString(), Pass.getText().toString(), imei);
                     /*
                      * here login is arg[0], Username.getText().toString() is arg[1] and so on.
                      */
@@ -74,8 +74,28 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        final AlertDialog.Builder builder =
+                new AlertDialog.Builder(this);
+        final String action = Settings.ACTION_LOCATION_SOURCE_SETTINGS;
+        final String message = "Enable Location";
 
-
+        builder.setMessage(message)
+                .setPositiveButton("OK",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface d, int id) {
+//                                this.startActivity(new Intent(action));
+                                Intent i = new Intent(action);
+                                startActivity(i);
+                                d.dismiss();
+                            }
+                        })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface d, int id) {
+                                d.cancel();
+                            }
+                        });
+        builder.create().show();
 
 
     }
@@ -102,8 +122,6 @@ public class LoginActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 
 
 }

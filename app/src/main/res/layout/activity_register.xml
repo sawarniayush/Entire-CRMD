@@ -33,7 +33,9 @@
             android:layout_alignParentLeft="true"
             android:text="@string/emp_name"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/name_reg"
@@ -54,7 +56,9 @@
             android:layout_below="@id/name_reg"
             android:text="@string/emp_username"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/username_reg"
@@ -75,7 +79,9 @@
             android:layout_below="@id/username_reg"
             android:text="@string/prompt_password"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/password_reg"
@@ -96,7 +102,9 @@
             android:layout_below="@id/password_reg"
             android:text="@string/prompt_con_password"
             android:textColor="@color/textColor"
-            android:textSize="20sp" />
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/con_password_reg"
@@ -111,7 +119,7 @@
 
         <Button
             android:id="@+id/register_button"
-            style="?android:textAppearanceSmall"
+            style="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/con_password_reg"

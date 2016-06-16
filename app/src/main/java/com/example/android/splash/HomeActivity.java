@@ -1,9 +1,8 @@
 package com.example.android.splash;
 
 import android.content.Intent;
-import android.support.v4.app.ShareCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,5 +25,9 @@ public class HomeActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(HomeActivity.this,MainActivity.class);
         startActivity(intent);
+        HomeActivity.this.finish();
+
     }
+
+
 }
