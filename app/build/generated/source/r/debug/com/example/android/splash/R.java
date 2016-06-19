@@ -2460,7 +2460,7 @@ containing a value of this type.
         public static final int ic_plusone_tall_off_client=0x7f020092;
         public static final int ic_setting_dark=0x7f020093;
         public static final int ic_setting_light=0x7f020094;
-        public static final int logo=0x7f020095;
+        public static final int log2=0x7f020095;
         public static final int mr_ic_cast_dark=0x7f020096;
         public static final int mr_ic_cast_light=0x7f020097;
         public static final int mr_ic_media_route_connecting_mono_dark=0x7f020098;

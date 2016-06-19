@@ -1,3 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a71cfcfe6d690ee7034e6303e68bc97fa5234946">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-9.0.1_7b2c290a52354199e0056741e7fea34a1db61b66\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8d502e4a55039c7b920b5ef5f89d23060304ff8c">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-9.0.1_8a99e54d11b0c7c3901b2e7d2a173a0b3f79bcce\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_a882621b85a2f5cb746124c2092f2c835a42093b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aa3f026e88b5606be5cb0c7be5cf224489ede2bf">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-9.0.1_7b3523fe9821a39657654d13ed20db4ea45b1179\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e7895d06e98e7252de7d08c49591e4ca92a570a9">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.0.1_0df6c6e40be2f8cd167a76916c440d42e91a8062\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="df7b50ec047648cc71075ec1ee24d3c9cf337e41">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-9.0.1_4ef51798b16ff3879d9b20e33139948d4fdf5167\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="1e972292f7c6bdc49935925da64f9f06d5f8b3ac">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-9.0.1_9d2ee20a4d6574453c03495f9dfc6a1b1af10f79\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="160717c8276150e51d036d76932a7b5e9adb8faa">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_53d76b03ceaf6a8d2435fb85782346bdf4e7eb28\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fa736dcff406efe6012e6edc61239c47a08b40f4">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-9.0.1_f878c6e0ae95723d5fc3c8daecb161082f23c075\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="8751850c44515d845de08e317733f1da49e6426a">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-9.0.1_3674dc4666e76bc7b5ed69e2114291fd900201f7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="beecf0c3e72517a9f684ac49dc836b347b80de26">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-9.0.1_26d9aaf69ea7c486c2730b93a526be5e1c565902\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="af9d57d713e05d6da464c0d009325e235585f5ea">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-9.0.1_3bd25f8d8c2e9d8942e537e63df193278313a5f9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="60f1c7b6953c6c82c4733b2cd67713835ed4fc39">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-common-9.0.1_a1928f534cb6cd8b5bd3a6051f8cc4d01b018db0\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_17e2c76d5137477bfebe6c7a1021a803eddaf47c\classes.dex" />
+    </item>
+    <item
+        jar="E:\Android\components\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_84027ebec968543f2041744c2586bd6b6c05febc\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2ad3e3e8810a3ea03417d19012169034dc51d021">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-9.0.1_f128e46d1d9a4500270fbb7f250268ad68e41c49\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9663366e1e6f9078d60c2701090c80e9fb644a36">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-9.0.1_1b3c1074d9e237241a4f8d0edf754c4ec1be222b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\9.0.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a2d2b21282d89df001d0ac96671a33bd8c0e83f8">
+        <dex dex="C:\Users\Kartik Sethi\AndroidStudioProjects\Entire-CRMD\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-9.0.1_7fa6e4929ec1ffdd54ce2fdf100c07897b596eaf\classes.dex" />
+    </item>
+
+</items>

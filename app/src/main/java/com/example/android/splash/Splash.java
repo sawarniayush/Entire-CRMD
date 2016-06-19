@@ -1,10 +1,8 @@
 package com.example.android.splash;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 public class Splash extends AppCompatActivity {
@@ -14,6 +12,8 @@ public class Splash extends AppCompatActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
+        ImageView im = (ImageView) findViewById(R.id.imageView);
+        im.setImageResource(R.drawable.log2);
 //        ImageView imgview=(ImageView)findViewById(R.id.imageView2);
 //        TranslateAnimation tanim=new TranslateAnimation(0.0f,800.0f,0.0f,0.0f);
 //        tanim.setDuration(3000);

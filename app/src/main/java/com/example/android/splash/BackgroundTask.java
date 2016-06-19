@@ -36,9 +36,9 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     Context contx;
     Activity activity;
     //String imei="";
-    String register_url = "http://192.168.252.50/GPSAttendance/welcome/register"; // (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
-    String login_url = "http://192.168.252.50/GPSAttendance/welcome/login";
-    String gps_url = "http://192.168.252.50/GPSAttendance/welcome/report";
+    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register"; // (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
+    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login";
+    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
 

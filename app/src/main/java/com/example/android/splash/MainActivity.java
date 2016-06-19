@@ -325,7 +325,8 @@ public class MainActivity extends AppCompatActivity implements
                 String imei=tm.getDeviceId();
                 //Log.v("MainActivity",imei+msg+loc);
                 bktask.execute("gps",imei,msg,loc);
-            }
+            } else
+                showToast("Sorry, your GPS is not working properly.");
 
 
             // Reset. Enable the Fetch Address button and stop showing the progress bar.

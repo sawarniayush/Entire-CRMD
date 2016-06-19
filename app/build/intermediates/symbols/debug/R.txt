@@ -667,7 +667,7 @@ int drawable ic_plusone_standard_off_client 0x7f020091
 int drawable ic_plusone_tall_off_client 0x7f020092
 int drawable ic_setting_dark 0x7f020093
 int drawable ic_setting_light 0x7f020094
-int drawable logo 0x7f020095
+int drawable log2 0x7f020095
 int drawable mr_ic_cast_dark 0x7f020096
 int drawable mr_ic_cast_light 0x7f020097
 int drawable mr_ic_media_route_connecting_mono_dark 0x7f020098
