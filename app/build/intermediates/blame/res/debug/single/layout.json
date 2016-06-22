@@ -112,12 +112,12 @@
         "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_home.xml",
         "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\src\\main\\res\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
+        "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",

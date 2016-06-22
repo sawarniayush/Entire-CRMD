@@ -92,12 +92,12 @@
         "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.1\\res\\drawable\\common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\log2.png",
-        "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\src\\main\\res\\drawable\\log2.png"
-    },
-    {
         "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_plus_signin_btn_text_dark.xml",
         "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.1\\res\\drawable\\common_plus_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\log2.png",
+        "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\src\\main\\res\\drawable\\log2.png"
     },
     {
         "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mr_ic_play_light.xml",

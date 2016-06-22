@@ -14,10 +14,12 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.splash);
         ImageView im = (ImageView) findViewById(R.id.imageView);
         im.setImageResource(R.drawable.log2);
-//        ImageView imgview=(ImageView)findViewById(R.id.imageView2);
-//        TranslateAnimation tanim=new TranslateAnimation(0.0f,800.0f,0.0f,0.0f);
-//        tanim.setDuration(3000);
-//        tanim.setRepeatCount(1);
+        // final ImageView iv = (ImageView) findViewById(R.id.imageView2);
+        // final Animation an = AnimationUtils.loadAnimation(getBaseContext(),R.anim.abc_fade_in);
+        //  ImageView imgview=(ImageView)findViewById(R.id.imageView2);
+        //   TranslateAnimation tanim=new TranslateAnimation(0.0f,800.0f,0.0f,0.0f);
+        //   tanim.setDuration(3000);
+        //   tanim.setRepeatCount(1);
         Thread timer = new Thread(){
             public void run(){
                 try{
