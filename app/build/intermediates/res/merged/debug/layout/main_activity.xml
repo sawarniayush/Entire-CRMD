@@ -47,11 +47,16 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/reporting_text"
-            android:background="#BBDEFB"
+            android:layout_margin="16dp"
+            android:background="#FFFFFF"
             android:gravity="top"
             android:hint="@string/text_input"
             android:inputType="textMultiLine"
-            android:singleLine="false" />
+            android:padding="8dp"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textColor="#212121" />
+
 
         <!--<ProgressBar-->
         <!--style="?android:attr/progressBarStyleLarge"-->
@@ -72,12 +77,17 @@
 
         <Button
             android:id="@+id/fetch_address_button"
-            android:layout_width="wrap_content"
+            style="?android:textAppearanceMedium"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:layout_margin="16dp"
+            android:background="@drawable/button_selector"
             android:onClick="fetchAddressButtonHandler"
-            android:text="@string/report" />
+            android:text="@string/report"
+            android:textColor="@color/textColor"
+            android:textStyle="bold" />
 
 
     </RelativeLayout>

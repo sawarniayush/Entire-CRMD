@@ -1681,8 +1681,29 @@
                     "startLine": 242,
                     "startColumn": 4,
                     "startOffset": 17669,
+                    "endLine": 244,
+                    "endColumn": 12,
+                    "endOffset": 17753
+                },
+                "from": {
+                    "file": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\src\\main\\res\\values-v21\\styles.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 59,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 145
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 245,
+                    "startColumn": 4,
+                    "startOffset": 17758,
                     "endColumn": 121,
-                    "endOffset": 17786
+                    "endOffset": 17875
                 },
                 "from": {
                     "file": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-appinvite\\9.0.1\\res\\values-v21\\values.xml",

@@ -240,5 +240,8 @@
     </style>
     <style name="Platform.ThemeOverlay.AppCompat.Dark"/>
     <style name="Platform.ThemeOverlay.AppCompat.Light"/>
+    <style name="RedCheck">
+        <item name="colorAccent">#D32F2F</item>
+    </style>
     <style name="Theme.AppInvite.Preview.Base" parent="@android:style/Theme.Material.Light.DialogWhenLarge.NoActionBar"/>
 </resources>

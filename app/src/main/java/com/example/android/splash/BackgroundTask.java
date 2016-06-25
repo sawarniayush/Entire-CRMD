@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -36,9 +35,10 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     Context contx;
     Activity activity;
     //String imei="";
-    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register"; //"http://192.168.252.50/GPSAttendance/welcome/register";                        // // (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
-    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login";// "http://192.168.252.50/GPSAttendance/welcome/login";//
-    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report"; //"http://192.168.252.50/GPSAttendance/welcome/report";//
+    String register_url = "http://72fa607b.ngrok.io/GPSAttendance/welcome/register"; // "http://61.246.165.5/GPSAttendance/welcome/register"; //                        // // (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
+    String login_url = "http://72fa607b.ngrok.io/GPSAttendance/welcome/login"; //"http://61.246.165.5/GPSAttendance/welcome/login";// //
+    String gps_url = "http://72fa607b.ngrok.io/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"; ////
+    String forget_passsword_url = "http://72fa607b.ngrok.io/GPSAttendance/Task_ResetPassword";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
 
@@ -76,15 +76,18 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8")); // last constructor of the documentation
                 String name = params[1]; // refer Register Activity if confused
-                String username = params[2]; // refer Register Activity if confused
-                String password = params[3]; // refer Register Activity if confused
+                String email = params[2];
+                String username = params[3]; // refer Register Activity if confused
+                String password = params[4]; // refer Register Activity if confused
+                String imei = params[5];
                 /*
                  * URLEncoder is a separate class with encode(String s, String charsetName) -> Encodes s using the Charset named by charsetName.
                  */
                 String data = URLEncoder.encode("name", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&" +
+                        URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8") + "&" +
                         URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&" +
                         URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8") + "&" +
-                        URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(params[4], "UTF-8");
+                        URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(imei, "UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -130,12 +133,13 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String username, password;
+                String username, password, imei;
                 username = params[1];
                 password = params[2];
+                imei = params[3];
                 String data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8") + "&" +
                         URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(password, "UTF-8") + "&" +
-                        URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(params[3], "UTF-8");
+                        URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(imei, "UTF-8");
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -211,13 +215,60 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 }
                 return stringBuilder.toString().trim();
             } catch (MalformedURLException e) {
-                Log.v("mal","HEre");
+//                Log.v("mal","HEre");
                 e.printStackTrace();
             } catch (ProtocolException e) {
-                Log.v("protocol","HEre");
+//                Log.v("protocol","HEre");
                 e.printStackTrace();
             } catch (IOException e) {
-                Log.v("IO","HEre");
+//                Log.v("IO","HEre");
+                e.printStackTrace();
+            }
+
+        } else if (method.equals("forget_password")) { // if params[0] is equal to "forget_password"
+
+            try {
+                URL url = new URL(forget_passsword_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String imei = params[1];
+                String data = URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(imei, "UTF-8");
+
+                bufferedWriter.write(data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                //Log.v("Back",imeigps+message+location);
+                // output stream has been used to send data to the server
+                /*
+                 * Now the response from the server will be in the form of json and we need to decode it
+                 */
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder stringBuilder = new StringBuilder();
+                String line = "";  // just a variable to read data from each line
+                while ((line = bufferedReader.readLine()) != null) {
+                    stringBuilder.append(line + "\n");
+                }
+                httpURLConnection.disconnect();
+                try {
+                    Thread.sleep(500); // to give a pause for the "connecting to  the server" effect
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return stringBuilder.toString().trim();
+            } catch (MalformedURLException e) {
+//                Log.v("mal","HEre");
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+//                Log.v("protocol","HEre");
+                e.printStackTrace();
+            } catch (IOException e) {
+//                Log.v("IO","HEre");
                 e.printStackTrace();
             }
 
@@ -237,15 +288,13 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
      */
     @Override
     protected void onPostExecute(String json) {
-       // Log.v("sdfsdf","Back");
-        if(json==null)
-        {
+        // Log.v("sdfsdf","Back");
+        if (json == null) {
             String error_message = "Some Error has occurred. Please check you internet connection.";
             //showDialog("Login failed", error_message, "net_fail");
-            Toast.makeText(this.activity,error_message,Toast.LENGTH_LONG).show();
+            Toast.makeText(this.activity, error_message, Toast.LENGTH_LONG).show();
             progressDialog.dismiss();
-        }
-        else {
+        } else {
             try {
                 // first we need to dismiss the
                 //String str=json;
@@ -287,13 +336,16 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 } else if (code.equals("report_false")) {
                     showDialog("Submission error!", message, code);
                     progressDialog.dismiss();
+                } else if (code.equals("forget_pass_true")) {
+                    showDialog("", message, code);
+                    progressDialog.dismiss();
                 }
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-
 
 
     }
@@ -303,6 +355,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
      */
     public void showDialog(String title, String message, String code) {
         builder.setTitle(title);
+
         if (code.equals("reg_true") || code.equals("reg_false")) {
 
             builder.setMessage(message);
@@ -346,6 +399,14 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
                     activity.finish();
+                }
+            });
+        } else if (code.equals("forget_pass_true")) {
+            builder.setMessage(message);
+            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.dismiss();
                 }
             });
         }

@@ -1,12 +1,12 @@
 /**
  * Copyright 2014 Google Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * <p>
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -26,6 +26,7 @@ import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -317,14 +318,30 @@ public class MainActivity extends AppCompatActivity implements
             // Show a toast message if an address was found.
             if (resultCode == Constants.SUCCESS_RESULT) {
                 showToast(getString(R.string.address_found));
-                EditText et=(EditText)findViewById(R.id.edit);
-                String msg= et.getText().toString();
+                EditText et = (EditText) findViewById(R.id.edit);
+                et.setFocusable(false);
+                View.OnTouchListener touchListener = new View.OnTouchListener() {
+                    public boolean onTouch(final View v, final MotionEvent motionEvent) {
+                        if (v.getId() == 1) {
+                            v.getParent().requestDisallowInterceptTouchEvent(true);
+                            switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
+                                case MotionEvent.ACTION_UP:
+                                    v.getParent().requestDisallowInterceptTouchEvent(false);
+                                    break;
+                            }
+                        }
+                        return false;
+                    }
+                };
+//                et.setLayoutParams(new TableLayout.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT,0f));
+                et.setOnTouchListener(touchListener);
+                String msg = et.getText().toString();
                 String loc = mAddressOutput;
-                BackgroundTask bktask=new BackgroundTask(MainActivity.this);
-                TelephonyManager tm=(TelephonyManager)MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-                String imei=tm.getDeviceId();
+                BackgroundTask bktask = new BackgroundTask(MainActivity.this);
+                TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+                String imei = tm.getDeviceId();
                 //Log.v("MainActivity",imei+msg+loc);
-                bktask.execute("gps",imei,msg,loc);
+                bktask.execute("gps", imei, msg, loc);
             } else
                 showToast("Sorry, your GPS is not working properly.");
 
@@ -334,4 +351,5 @@ public class MainActivity extends AppCompatActivity implements
             updateUIWidgets();
         }
     }
+
 }
