@@ -35,10 +35,10 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     Context contx;
     Activity activity;
     //String imei="";
-    String register_url = "http://72fa607b.ngrok.io/GPSAttendance/welcome/register"; // "http://61.246.165.5/GPSAttendance/welcome/register"; //                        // // (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
-    String login_url = "http://72fa607b.ngrok.io/GPSAttendance/welcome/login"; //"http://61.246.165.5/GPSAttendance/welcome/login";// //
-    String gps_url = "http://72fa607b.ngrok.io/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"; ////
-    String forget_passsword_url = "http://72fa607b.ngrok.io/GPSAttendance/Task_ResetPassword";
+    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register";//"http://72fa607b.ngrok.io/GPSAttendance/welcome/register";  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
+    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login";  // "http://72fa607b.ngrok.io/GPSAttendance/welcome/login";
+    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report";  // "http://72fa607b.ngrok.io/GPSAttendance/welcome/report";
+    String forget_password_url = "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; // "http://72fa607b.ngrok.io/GPSAttendance/Task_ResetPassword";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
 
@@ -228,7 +228,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
         } else if (method.equals("forget_password")) { // if params[0] is equal to "forget_password"
 
             try {
-                URL url = new URL(forget_passsword_url);
+                URL url = new URL(forget_password_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);

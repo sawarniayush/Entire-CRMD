@@ -72,7 +72,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/email_text_view_reg"
-                android:inputType="textAutoComplete"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColor="@color/textColor"
