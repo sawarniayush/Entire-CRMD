@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
          * code to set up font for text views
          */
         TextView register_header = (TextView) findViewById(R.id.register_header);
-        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Roboto-Black.ttf");
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BlackItalic.ttf");
 
         register_header.setTypeface(typeFace);
 

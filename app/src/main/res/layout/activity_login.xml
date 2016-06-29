@@ -140,8 +140,10 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:gravity="center"
+                android:fontFamily="sans-serif-medium"
                 android:text="@string/sign_up_text"
                 android:textColor="@color/textColor"
+                android:textStyle="bold"
                 android:textSize="18sp"
 
                 />

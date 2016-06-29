@@ -32,12 +32,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
+            android:textAllCaps="true"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/report_text"
             android:textColor="@color/textColor"
             android:textSize="30sp"
             android:textStyle="bold" />
+
+
 
 
         <EditText
@@ -58,14 +61,15 @@
             android:textColor="#212121" />
 
 
-        <!--<ProgressBar-->
-        <!--style="?android:attr/progressBarStyleLarge"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/progress_bar"-->
-        <!--android:indeterminate="true"-->
-        <!--android:layout_below="@+id/edit"-->
-        <!--android:layout_centerHorizontal="true" />-->
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit"
+            android:layout_alignBottom="@id/edit"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="true" />
 
         <!--<EditText-->
         <!--android:id="@+id/editText"-->
@@ -75,12 +79,22 @@
         <!--android:layout_alignParentStart="true"-->
         <!--android:layout_below="@+id/reporting_text" />-->
 
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_add_a_photo_black_24dp"
+            android:id="@+id/imageButton"
+            android:layout_below="@id/edit"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="40dp" />
+
         <Button
             android:id="@+id/fetch_address_button"
             style="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_below="@+id/imageButton"
             android:layout_centerHorizontal="true"
             android:layout_margin="16dp"
             android:background="@drawable/button_selector"
@@ -88,6 +102,8 @@
             android:text="@string/report"
             android:textColor="@color/textColor"
             android:textStyle="bold" />
+
+
 
 
     </RelativeLayout>

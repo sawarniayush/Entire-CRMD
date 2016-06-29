@@ -35,10 +35,10 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     Context contx;
     Activity activity;
     //String imei="";
-    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register";//"http://72fa607b.ngrok.io/GPSAttendance/welcome/register";  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
-    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login";  // "http://72fa607b.ngrok.io/GPSAttendance/welcome/login";
-    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report";  // "http://72fa607b.ngrok.io/GPSAttendance/welcome/report";
-    String forget_password_url = "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; // "http://72fa607b.ngrok.io/GPSAttendance/Task_ResetPassword";
+    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register";// "http://56dd4dd6.ngrok.io/GPSAttendance/welcome/register";//  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
+    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login"; //"http://56dd4dd6.ngrok.io/GPSAttendance/welcome/login";//
+    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report";//"http://56dd4dd6.ngrok.io/GPSAttendance/welcome/report";
+    String forget_password_url = "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";//"http://56dd4dd6.ngrok.io/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
 
@@ -316,6 +316,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 if (code.equals("reg_true")) // reg_true that means registration success, so corresponding message will be displayed: (here) it is a random string ("Hurray!") (to be changed)
                 {
                     showDialog("Registration Success", message, code);
+                    progressDialog.dismiss();
                 } else if (code.equals("reg_false"))// reg_false that means registration failure, so corresponding message will be displayed: (here) it is a random string ("Failed!") (to be changed)
                 {
                     showDialog("Registration Failed", message, code);

@@ -200,6 +200,10 @@
         "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_add_a_photo_black_24dp1.png",
+        "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_add_a_photo_black_24dp1.png"
+    },
+    {
         "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\common_plus_signin_btn_icon_light_focused.9.png",
         "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.1\\res\\drawable-mdpi-v4\\common_plus_signin_btn_icon_light_focused.9.png"
     },
@@ -262,6 +266,10 @@
     {
         "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\common_plus_signin_btn_text_dark_disabled.9.png",
         "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.1\\res\\drawable-mdpi-v4\\common_plus_signin_btn_text_dark_disabled.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_add_a_photo_black_24dp.png",
+        "source": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_add_a_photo_black_24dp.png"
     },
     {
         "merged": "C:\\Users\\Kartik Sethi\\AndroidStudioProjects\\Entire-CRMD\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_cast_off_light.png",

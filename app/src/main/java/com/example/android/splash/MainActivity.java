@@ -18,6 +18,8 @@ package com.example.android.splash;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
@@ -30,6 +32,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements
 
     protected static final String ADDRESS_REQUESTED_KEY = "address-request-pending";
     protected static final String LOCATION_ADDRESS_KEY = "location-address";
+//    EditText et = (EditText) findViewById(R.id.edit);
 
 
     /**
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements
      * Represents a geographical location.
      */
     protected Location mLastLocation;
-
+    private EditText et;
     /**
      * Tracks whether the user has requested an address. Becomes true when the user requests an
      * address and false when the address (or an error message) is delivered.
@@ -124,9 +129,9 @@ public class MainActivity extends AppCompatActivity implements
         mResultReceiver = new AddressResultReceiver(new Handler());
 
         //mLocationAddressTextView = (TextView) findViewById(R.id.location_address_view);
-        //mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         mFetchAddressButton = (Button) findViewById(R.id.fetch_address_button);
-
+        et = (EditText) findViewById(R.id.edit);
         // Set defaults, then update using values stored in the Bundle.
         mAddressRequested = false;
         mAddressOutput = "";
@@ -134,7 +139,33 @@ public class MainActivity extends AppCompatActivity implements
 
         updateUIWidgets();
         buildGoogleApiClient();
+
+
+        TextView report_header = (TextView) findViewById(R.id.reporting_text);
+        Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BlackItalic.ttf");
+        report_header.setTypeface(typeFace);
+
+        ImageButton Camera_button = (ImageButton) findViewById(R.id.imageButton);
+        assert Camera_button != null;
+        Camera_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, 0);
+            }
+        });
     }
+
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+
+        Bitmap bp = (Bitmap) data.getExtras().get("data");
+        ImageView iv = (ImageView) findViewById(R.id.captured_image);
+        iv.setImageBitmap(bp);
+    }
+
 
     /**
      * Updates fields based on data stored in the bundle.
@@ -269,12 +300,17 @@ public class MainActivity extends AppCompatActivity implements
      */
     private void updateUIWidgets() {
         if (mAddressRequested) {
-            //mProgressBar.setVisibility(ProgressBar.VISIBLE);
+            mProgressBar.setVisibility(ProgressBar.VISIBLE);
             mFetchAddressButton.setEnabled(false);
+            et.setEnabled(false);
+            et.setFocusable(false);
 
         } else {
-            //mProgressBar.setVisibility(ProgressBar.GONE);
+            mProgressBar.setVisibility(ProgressBar.GONE);
             mFetchAddressButton.setEnabled(true);
+            //et.setEnabled(true);
+            //et.setFocusable(true);
+
 
 
         }
@@ -318,7 +354,7 @@ public class MainActivity extends AppCompatActivity implements
             // Show a toast message if an address was found.
             if (resultCode == Constants.SUCCESS_RESULT) {
                 showToast(getString(R.string.address_found));
-                EditText et = (EditText) findViewById(R.id.edit);
+//                EditText et = (EditText) findViewById(R.id.edit);
                 et.setFocusable(false);
                 View.OnTouchListener touchListener = new View.OnTouchListener() {
                     public boolean onTouch(final View v, final MotionEvent motionEvent) {
@@ -347,6 +383,7 @@ public class MainActivity extends AppCompatActivity implements
 
 
             // Reset. Enable the Fetch Address button and stop showing the progress bar.
+
             mAddressRequested = false;
             updateUIWidgets();
         }
