@@ -319,18 +319,21 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 // there are two data, code and message from the server as defined in our php script
 
                 String code = JO.getString("code");  // code as the key, getString will return the value from the key:value pair
-                String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
+
                 if (code.equals("reg_true")) // reg_true that means registration success, so corresponding message will be displayed: (here) it is a random string ("Hurray!") (to be changed)
                 {
+                    String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
                     showDialog("Registration Success", message, code);
                     progressDialog.dismiss();
                 } else if (code.equals("reg_false"))// reg_false that means registration failure, so corresponding message will be displayed: (here) it is a random string ("Failed!") (to be changed)
                 {
+                    String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
                     showDialog("Registration Failed", message, code);
                     progressDialog.dismiss();
                 } else if (code.equals("login_true")) {
                     Log.v("kartik:", "asasa");
-
+                    String name = JO.getString("name"); // message as the key, getString will return the value from the key:value pair
+                    String dept = JO.getString("Department"); // message as the key, getString will return the value from the key:value pair
                     JSONArray js = JO.getJSONArray("supervisor");
                     sString = new String[js.length()];
                     for (int i = 0; i < js.length(); i++) {
@@ -339,20 +342,25 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
 
                     Intent intent = new Intent(activity, HomeActivity.class);
                     // to attach message to the intent from  the server
-                    intent.putExtra("message", message);
+                    intent.putExtra("name", name);
+                    intent.putExtra("dept", dept);
+
                     activity.startActivity(intent);
                     progressDialog.dismiss();
                 } else if (code.equals("login_false")) {
+                    String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
                     showDialog("Login Error", message, code);
                     progressDialog.dismiss();
                 } else if (code.equals("report_true")) {
-
+                    String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
                     showDialog("Submission Successful!", message, code);
                     progressDialog.dismiss();
                 } else if (code.equals("report_false")) {
+                    String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
                     showDialog("Submission error!", message, code);
                     progressDialog.dismiss();
                 } else if (code.equals("forget_pass_true")) {
+                    String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
                     showDialog("", message, code);
                     progressDialog.dismiss();
                 }

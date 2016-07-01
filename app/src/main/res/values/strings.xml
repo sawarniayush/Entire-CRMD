@@ -29,4 +29,6 @@
     <string name="forget_pass">Forget Password?</string>
     <string name="welcome_text">Welcome!</string>
     <string name="emp">Name:</string>
+    <string name="dept">Department:</string>
+    <string name="supervisor">Supervisor(s):</string>
 </resources>
