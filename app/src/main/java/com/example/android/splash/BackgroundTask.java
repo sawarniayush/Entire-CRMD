@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,11 +35,13 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     // first argument tell us that parameter type is String
     Context contx;
     Activity activity;
+    //    public static JSONArray supervisor;
+    public static String[] sString;
     //String imei="";
-    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register";// "http://56dd4dd6.ngrok.io/GPSAttendance/welcome/register";//  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
-    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login"; //"http://56dd4dd6.ngrok.io/GPSAttendance/welcome/login";//
-    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report";//"http://56dd4dd6.ngrok.io/GPSAttendance/welcome/report";
-    String forget_password_url = "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";//"http://56dd4dd6.ngrok.io/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
+    String register_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/register";// "http://12191f65.ngrok.io/GPSAttendance/welcome/register";//  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
+    String login_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/login";// "http://61.246.165.5/GPSAttendance/welcome/login";
+    String gps_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"
+    String forget_password_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
 
@@ -183,13 +186,17 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String imeigps, message, location;
+                String imeigps, message, location, imageFlag, captImage;
                 imeigps = params[1];
                 message = params[2];
                 location = params[3];
+                imageFlag = params[4];
+                captImage = params[5];
                 String data = URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(imeigps, "UTF-8") + "&" +
                         URLEncoder.encode("Report", "UTF-8") + "=" + URLEncoder.encode(message, "UTF-8") + "&" +
-                        URLEncoder.encode("location", "UTF-8") + "=" + URLEncoder.encode(location, "UTF-8");
+                        URLEncoder.encode("location", "UTF-8") + "=" + URLEncoder.encode(location, "UTF-8") + "&" +
+                        URLEncoder.encode("imageflag", "UTF-8") + "=" + URLEncoder.encode(imageFlag, "UTF-8") + "&" +
+                        URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(captImage, "UTF-8");
 
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
@@ -304,10 +311,10 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
 
             /*
              * 0 is the index as our final JSON array which is being echoed from the php script
-             * It has value either {"server_response" :{"code":"reg_true", "message":"Hurray!"}} or {"server_response" :{"code":"reg_false", "message":"Failed!"}}
+             * It has value either ["server_response" :{"code":"reg_true", "message":"Hurray!"}} or {"server_response" :{"code":"reg_false", "message":"Failed!"}]
              */
                 JSONObject JO = jsonArray.getJSONObject(0);
-                // this will give us the json object = {"code":"reg_true", "message":"Hurray!"} or {"code":"reg_false", "message":"Failed!"}
+                // this will give us the json object = {"code":"reg_true", "message":"Hurray!,"supervisor":["hello","world"]} or {"code":"reg_false", "message":"Failed!"}
                 // now we can read respective values from the key:value pairs for the above jason object
                 // there are two data, code and message from the server as defined in our php script
 
@@ -322,6 +329,14 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                     showDialog("Registration Failed", message, code);
                     progressDialog.dismiss();
                 } else if (code.equals("login_true")) {
+                    Log.v("kartik:", "asasa");
+
+                    JSONArray js = JO.getJSONArray("supervisor");
+                    sString = new String[js.length()];
+                    for (int i = 0; i < js.length(); i++) {
+                        sString[i] = js.getString(i);
+                    }
+
                     Intent intent = new Intent(activity, HomeActivity.class);
                     // to attach message to the intent from  the server
                     intent.putExtra("message", message);

@@ -33,9 +33,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_margin="20dp"
-            android:textAllCaps="true"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/report_text"
+            android:textAllCaps="true"
             android:textColor="@color/textColor"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -44,7 +44,7 @@
         <EditText
             android:id="@+id/edit"
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="250dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/reporting_text"
@@ -53,7 +53,9 @@
             android:gravity="top"
             android:hint="@string/text_input"
             android:inputType="textMultiLine"
+            android:overScrollMode="always"
             android:padding="8dp"
+            android:scrollbarStyle="insideInset"
             android:scrollbars="vertical"
             android:singleLine="false"
             android:textColor="#212121" />
@@ -64,10 +66,13 @@
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignTop="@id/edit"
             android:layout_below="@id/edit"
-            android:layout_alignBottom="@id/edit"
             android:layout_centerHorizontal="true"
-            android:indeterminate="true" />
+            android:visibility="visible"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/colorAccent" />
 
         <!--<EditText-->
         <!--android:id="@+id/editText"-->
@@ -78,29 +83,27 @@
         <!--android:layout_below="@+id/reporting_text" />-->
 
         <ImageButton
+            android:id="@+id/imageButton"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/ic_add_a_photo_black_24dp"
-            android:id="@+id/imageButton"
             android:layout_below="@id/edit"
             android:layout_margin="16dp"
-            android:layout_marginBottom="40dp" />
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/ic_add_a_photo_black_24dp" />
 
         <ImageView
             android:id="@+id/captured_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_below="@id/edit"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/fetch_address_button"
             style="?android:textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_below="@+id/captured_image"
             android:layout_centerHorizontal="true"
             android:layout_margin="16dp"

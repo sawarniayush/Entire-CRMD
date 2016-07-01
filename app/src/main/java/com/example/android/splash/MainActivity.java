@@ -1,12 +1,12 @@
 /**
  * Copyright 2014 Google Inc. All Rights Reserved.
- * <p>
+ * <p/>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p>
+ * <p/>
  * http://www.apache.org/licenses/LICENSE-2.0
- * <p>
+ * <p/>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -27,6 +27,7 @@ import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
+import android.util.Base64;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -43,6 +44,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationServices;
+
+import java.io.ByteArrayOutputStream;
 
 /**
  * Getting the Location Address.
@@ -86,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements
      */
     protected Location mLastLocation;
     private EditText et;
+    //    private String loc;
+    private String capt_image = "empty";
     /**
      * Tracks whether the user has requested an address. Becomes true when the user requests an
      * address and false when the address (or an error message) is delivered.
@@ -115,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements
      * Visible while the address is being fetched.
      */
     ProgressBar mProgressBar;
-
+    String latlong;
     /**
      * Kicks off the request to fetch an address when pressed.
      */
@@ -145,6 +150,21 @@ public class MainActivity extends AppCompatActivity implements
         Typeface typeFace = Typeface.createFromAsset(getAssets(), "fonts/Roboto-BlackItalic.ttf");
         report_header.setTypeface(typeFace);
 
+        et.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View view, MotionEvent event) {
+                // TODO Auto-generated method stub
+                if (view.getId() == R.id.edit) {
+                    view.getParent().requestDisallowInterceptTouchEvent(true);
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                        case MotionEvent.ACTION_UP:
+                            view.getParent().requestDisallowInterceptTouchEvent(false);
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
+
         ImageButton Camera_button = (ImageButton) findViewById(R.id.imageButton);
         assert Camera_button != null;
         Camera_button.setOnClickListener(new View.OnClickListener() {
@@ -154,6 +174,35 @@ public class MainActivity extends AppCompatActivity implements
                 startActivityForResult(intent, 0);
             }
         });
+
+//        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+// Define a listener that responds to location updates
+//        LocationListener locationListener = new LocationListener() {
+//            public void onLocationChanged(Location location) {
+//                // Called when a new location is found by the network location provider.
+//                Double lat = location.getLatitude();
+//                Double lon = location.getLongitude();
+//                latlong = Double.toString(lat) + " , " + Double.toString(lon);
+//
+//
+//                Log.v("Location",Double.toString(lat));
+//                Log.v("Location",Double.toString(lon));
+//                Toast.makeText(getApplicationContext(), Double.toString(lat) + " , " + Double.toString(lon), Toast.LENGTH_LONG).show();
+//            }
+//
+//            public void onStatusChanged(String provider, int status, Bundle extras) {
+//            }
+//
+//            public void onProviderEnabled(String provider) {
+//            }
+//
+//            public void onProviderDisabled(String provider) {
+//            }
+//        };
+
+// Register the listener with the Location Manager to receive location updates
+//        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, (android.location.LocationListener) locationListener);
     }
 
 
@@ -161,9 +210,15 @@ public class MainActivity extends AppCompatActivity implements
         // TODO Auto-generated method stub
         super.onActivityResult(requestCode, resultCode, data);
 
-        Bitmap bp = (Bitmap) data.getExtras().get("data");
-        ImageView iv = (ImageView) findViewById(R.id.captured_image);
-        iv.setImageBitmap(bp);
+        if (data != null) {
+            Bitmap bp = (Bitmap) data.getExtras().get("data");
+            ImageView iv = (ImageView) findViewById(R.id.captured_image);
+            capt_image = getStringImage(bp);
+            iv.setImageBitmap(bp);
+        } else
+            return;
+
+
     }
 
 
@@ -308,9 +363,8 @@ public class MainActivity extends AppCompatActivity implements
         } else {
             mProgressBar.setVisibility(ProgressBar.GONE);
             mFetchAddressButton.setEnabled(true);
-            //et.setEnabled(true);
-            //et.setFocusable(true);
-
+            et.setEnabled(true);
+            et.setFocusable(true);
 
 
         }
@@ -372,12 +426,27 @@ public class MainActivity extends AppCompatActivity implements
 //                et.setLayoutParams(new TableLayout.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT,0f));
                 et.setOnTouchListener(touchListener);
                 String msg = et.getText().toString();
+//                 loc = "loc_empty";
                 String loc = mAddressOutput;
+//                if(!loc.equals("loc_empty")){
                 BackgroundTask bktask = new BackgroundTask(MainActivity.this);
                 TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
                 String imei = tm.getDeviceId();
                 //Log.v("MainActivity",imei+msg+loc);
-                bktask.execute("gps", imei, msg, loc);
+                if (capt_image.equals("empty"))
+                    bktask.execute("gps", imei, msg, loc, "false", "");
+                else
+                    bktask.execute("gps", imei, msg, loc, "true", capt_image);
+//            }else{
+//                    BackgroundTask bktask = new BackgroundTask(MainActivity.this);
+//                    TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+//                    String imei = tm.getDeviceId();
+//                    //Log.v("MainActivity",imei+msg+loc);
+//                    if (capt_image.equals("empty"))
+//                        bktask.execute("gps", imei, msg, latlong, "false", "");
+//                    else
+//                        bktask.execute("gps", imei, msg, latlong, "true", capt_image);
+//                }
             } else
                 showToast("Sorry, your GPS is not working properly.");
 
@@ -389,4 +458,11 @@ public class MainActivity extends AppCompatActivity implements
         }
     }
 
+    public String getStringImage(Bitmap bmp) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
 }

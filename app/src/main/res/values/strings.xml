@@ -27,4 +27,6 @@
     <string name="remember">Remember Me</string>
     <string name="emp_email">Email</string>
     <string name="forget_pass">Forget Password?</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="emp">Name:</string>
 </resources>

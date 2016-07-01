@@ -2,14 +2,14 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@color/colorPrimary">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
+
         android:weightSum="1"
         tools:context="com.example.android.splash.HomeActivity">
 
@@ -18,8 +18,34 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:layout_margin="16dp"
+            android:text="@string/welcome_text"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/textColor"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/dept_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emp"
+            android:layout_below="@id/welcome_txt"
+            android:textAllCaps="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/textColor"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/super_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/emp"
+            android:textAllCaps="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/textColor"
+            android:textSize="30sp" />
+
 
         <Button
             android:id="@+id/button"
