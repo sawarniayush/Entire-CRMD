@@ -38,10 +38,10 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     //    public static JSONArray supervisor;
     public static String[] sString;
     //String imei="";
-    String register_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/register";// "http://12191f65.ngrok.io/GPSAttendance/welcome/register";//  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
-    String login_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/login";// "http://61.246.165.5/GPSAttendance/welcome/login";
-    String gps_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"
-    String forget_password_url = "http://54e8d8da.ngrok.io/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
+    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register";// "http://12191f65.ngrok.io/GPSAttendance/welcome/register";//  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
+    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login";// "http://61.246.165.5/GPSAttendance/welcome/login";
+    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"
+    String forget_password_url = "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
 
