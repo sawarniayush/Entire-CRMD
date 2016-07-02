@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -41,11 +42,27 @@ public class HomeActivity extends AppCompatActivity {
 //        Log.v("checking: ",BackgroundTask.sString);
 
         List<String> complaintList = new ArrayList<String>(Arrays.asList(BackgroundTask.sString));
+
         pendingAdapter = new ArrayAdapter<String>(HomeActivity.this, R.layout.list_view_item, R.id.textView, complaintList);
 //
 //
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(pendingAdapter);
+
+        listView.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View view, MotionEvent event) {
+                // TODO Auto-generated method stub
+                if (view.getId() == R.id.edit) {
+                    view.getParent().requestDisallowInterceptTouchEvent(true);
+                    switch (event.getAction() & MotionEvent.ACTION_MASK) {
+                        case MotionEvent.ACTION_UP:
+                            view.getParent().requestDisallowInterceptTouchEvent(false);
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
 
 
     }

@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:minHeight="?android:listPreferredItemHeight"
     android:gravity="center_vertical"
-    android:id="@+id/textView">
+    android:id="@+id/textView"
+    android:clickable="false">
 
 
 </TextView>
