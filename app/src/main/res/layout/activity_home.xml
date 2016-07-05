@@ -111,8 +111,7 @@
             android:padding="16dp"
             android:layout_below="@id/list"
             android:text="Proceed"
-            android:layout_margin="16dp"
-            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
             android:textColor="@color/textColor"
             android:textStyle="bold" />
 
