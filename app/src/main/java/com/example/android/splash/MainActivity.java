@@ -22,6 +22,7 @@ import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.ResultReceiver;
@@ -49,22 +50,22 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * Getting the Location Address.
- *
+ * <p/>
  * Demonstrates how to use the {@link Geocoder} API and reverse geocoding to
  * display a device's location as an address. Uses an IntentService to fetch the location address,
  * and a ResultReceiver to process results sent by the IntentService.
- *
+ * <p/>
  * Android has two location request settings:
  * {@code ACCESS_COARSE_LOCATION} and {@code ACCESS_FINE_LOCATION}. These settings control
  * the accuracy of the current location. This sample uses ACCESS_FINE_LOCATION, as defined in
  * the AndroidManifest.xml.
- *
+ * <p/>
  * For a starter example that displays the last known location of a device using a longitude and latitude,
  * see https://github.com/googlesamples/android-play-location/tree/master/BasicLocation.
- *
+ * <p/>
  * For an example that shows location updates using the Fused Location Provider API, see
  * https://github.com/googlesamples/android-play-location/tree/master/LocationUpdates.
- *
+ * <p/>
  * This sample uses Google Play services (GoogleApiClient) but does not need to authenticate a user.
  * For an example that uses authentication, see
  * https://github.com/googlesamples/android-google-accounts/tree/master/QuickStart.
@@ -125,6 +126,8 @@ public class MainActivity extends AppCompatActivity implements
      * Kicks off the request to fetch an address when pressed.
      */
     Button mFetchAddressButton;
+    long time1, time2;
+    boolean isGPS;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -140,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements
         // Set defaults, then update using values stored in the Bundle.
         mAddressRequested = false;
         mAddressOutput = "";
+        isGPS = false;
         updateValuesFromBundle(savedInstanceState);
 
         updateUIWidgets();
@@ -257,6 +261,7 @@ public class MainActivity extends AppCompatActivity implements
      */
     public void fetchAddressButtonHandler(View view) {
         // We only start the service to fetch the address if GoogleApiClient is connected.
+        time1 = System.currentTimeMillis();
         if (mGoogleApiClient.isConnected() && mLastLocation != null) {
             startIntentService();
         }
@@ -266,8 +271,6 @@ public class MainActivity extends AppCompatActivity implements
         // immediately kicks off the process of getting the address.
         mAddressRequested = true;
         updateUIWidgets();
-
-
     }
 
     @Override
@@ -327,13 +330,15 @@ public class MainActivity extends AppCompatActivity implements
         // (creating a process for it if needed); if it is running then it remains running. The
         // service kills itself automatically once all intents are processed.
         startService(intent);
+
     }
 
     @Override
     public void onConnectionFailed(ConnectionResult result) {
         // Refer to the javadoc for ConnectionResult to see what error codes might be returned in
         // onConnectionFailed.
-        Log.i(TAG, "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
+        Log.i(TAG, "Connection failed: ConnectionResult.getErrorCode() = " + result);
+        NWloc();
     }
 
 
@@ -374,7 +379,7 @@ public class MainActivity extends AppCompatActivity implements
      * Shows a toast with the given text.
      */
     protected void showToast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -387,6 +392,49 @@ public class MainActivity extends AppCompatActivity implements
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    protected void GPSloc(int resultCode, Bundle resultData) {
+        // Display the address string or an error message sent from the intent service.
+        mAddressOutput = resultData.getString(Constants.RESULT_DATA_KEY);
+        //displayAddressOutput();
+        Log.v("Location", "abc");
+
+        // Show a toast message if an address was found.
+        if (resultCode == Constants.SUCCESS_RESULT) {
+            showToast(getString(R.string.address_found));
+//                EditText et = (EditText) findViewById(R.id.edit);
+            et.setFocusable(false);
+            View.OnTouchListener touchListener = new View.OnTouchListener() {
+                public boolean onTouch(final View v, final MotionEvent motionEvent) {
+                    if (v.getId() == 1) {
+                        v.getParent().requestDisallowInterceptTouchEvent(true);
+                        switch (motionEvent.getAction() & MotionEvent.ACTION_MASK) {
+                            case MotionEvent.ACTION_UP:
+                                v.getParent().requestDisallowInterceptTouchEvent(false);
+                                break;
+                        }
+                    }
+                    return false;
+                }
+            };
+//                et.setLayoutParams(new TableLayout.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT,0f));
+            et.setOnTouchListener(touchListener);
+            String msg = et.getText().toString();
+//                 loc = "loc_empty";
+            String loc = mAddressOutput;
+//                if(!loc.equals("loc_empty")){
+            BackgroundTask bktask = new BackgroundTask(MainActivity.this);
+            TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+            String imei = tm.getDeviceId();
+            //Log.v("MainActivity",imei+msg+loc);
+            if (capt_image.equals("empty"))
+                bktask.execute("gps", imei, msg, loc, "false", "", "true");
+            else
+                bktask.execute("gps", imei, msg, loc, "true", capt_image, "true");
+            isGPS = true;
+        }
+        isGPS = false;
+    }
+
     /**
      * Receiver for data sent from FetchAddressIntentService.
      */
@@ -396,19 +444,27 @@ public class MainActivity extends AppCompatActivity implements
         }
 
         /**
-         *  Receives data sent from FetchAddressIntentService and updates the UI in MainActivity.
+         * Receives data sent from FetchAddressIntentService and updates the UI in MainActivity.
          */
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {
 
-            // Display the address string or an error message sent from the intent service.
-            mAddressOutput = resultData.getString(Constants.RESULT_DATA_KEY);
-            //displayAddressOutput();
+            // Log.v("GPS",GPSloc(resultCode,resultData));
+           /* while (!GPSloc(resultCode, resultData)) {
+                time2 = System.currentTimeMillis();
+               Log.v("Time",Long.toString(time1)+" "+Long.toString(time2));
+                if (time2 - time1 >= 5000) {
+                    flag = 0;
+                    Log.v("Flag",Integer.toString(flag));
+                    break;
+                }
+            }*/
+            GPSloc(resultCode, resultData);
+        }
+    }
 
-            // Show a toast message if an address was found.
-            if (resultCode == Constants.SUCCESS_RESULT) {
-                showToast(getString(R.string.address_found));
-//                EditText et = (EditText) findViewById(R.id.edit);
+    protected void NWloc() {
+        showToast("Sorry, your GPS is not working properly.Location coordinates will be sent using network provider.");
                 et.setFocusable(false);
                 View.OnTouchListener touchListener = new View.OnTouchListener() {
                     public boolean onTouch(final View v, final MotionEvent motionEvent) {
@@ -427,36 +483,31 @@ public class MainActivity extends AppCompatActivity implements
                 et.setOnTouchListener(touchListener);
                 String msg = et.getText().toString();
 //                 loc = "loc_empty";
-                String loc = mAddressOutput;
 //                if(!loc.equals("loc_empty")){
                 BackgroundTask bktask = new BackgroundTask(MainActivity.this);
                 TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
                 String imei = tm.getDeviceId();
+        AppLocationService appLocationService = new AppLocationService(MainActivity.this);
                 //Log.v("MainActivity",imei+msg+loc);
-                if (capt_image.equals("empty"))
-                    bktask.execute("gps", imei, msg, loc, "false", "");
-                else
-                    bktask.execute("gps", imei, msg, loc, "true", capt_image);
-//            }else{
-//                    BackgroundTask bktask = new BackgroundTask(MainActivity.this);
-//                    TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-//                    String imei = tm.getDeviceId();
-//                    //Log.v("MainActivity",imei+msg+loc);
-//                    if (capt_image.equals("empty"))
-//                        bktask.execute("gps", imei, msg, latlong, "false", "");
-//                    else
-//                        bktask.execute("gps", imei, msg, latlong, "true", capt_image);
-//                }
-            } else
-                showToast("Sorry, your GPS is not working properly.");
-
+        Location nwLocation = appLocationService
+                .getLocation(LocationManager.NETWORK_PROVIDER);
+        if (nwLocation != null) {
+            double latitude = nwLocation.getLatitude();
+            double longitude = nwLocation.getLongitude();
+            bktask = new BackgroundTask(MainActivity.this);
+            String loc = Double.toString(latitude) + " , " + Double.toString(longitude);
+            if (capt_image.equals("empty"))
+                bktask.execute("gps", imei, msg, loc, "false", "", "false");
+            else
+                bktask.execute("gps", imei, msg, loc, "true", capt_image, "false");
+        }
 
             // Reset. Enable the Fetch Address button and stop showing the progress bar.
 
             mAddressRequested = false;
-            updateUIWidgets();
+
+        updateUIWidgets();
         }
-    }
 
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();

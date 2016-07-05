@@ -186,17 +186,19 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String imeigps, message, location, imageFlag, captImage;
+                String imeigps, message, location, imageFlag, captImage, locationFlag;
                 imeigps = params[1];
                 message = params[2];
                 location = params[3];
                 imageFlag = params[4];
                 captImage = params[5];
+                locationFlag = params[6];
                 String data = URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(imeigps, "UTF-8") + "&" +
                         URLEncoder.encode("Report", "UTF-8") + "=" + URLEncoder.encode(message, "UTF-8") + "&" +
                         URLEncoder.encode("location", "UTF-8") + "=" + URLEncoder.encode(location, "UTF-8") + "&" +
                         URLEncoder.encode("imageflag", "UTF-8") + "=" + URLEncoder.encode(imageFlag, "UTF-8") + "&" +
-                        URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(captImage, "UTF-8");
+                        URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(captImage, "UTF-8") + "&" +
+                        URLEncoder.encode("locationflag", "UTF-8") + "=" + URLEncoder.encode(locationFlag, "UTF-8");
 
                 bufferedWriter.write(data);
                 bufferedWriter.flush();
