@@ -38,12 +38,13 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     //    public static JSONArray supervisor;
     public static String[] sString;
     //String imei="";
-    String register_url = "http://61.246.165.5/GPSAttendance/welcome/register";// "http://12191f65.ngrok.io/GPSAttendance/welcome/register";//  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
-    String login_url = "http://61.246.165.5/GPSAttendance/welcome/login";// "http://61.246.165.5/GPSAttendance/welcome/login";
-    String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"
-    String forget_password_url = "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
+    String register_url = "http://2f1a2ffe.ngrok.io/GPSAttendance/welcome/register";// "http://12191f65.ngrok.io/GPSAttendance/welcome/register";//  (name of the site) "http://192.168.X.X(ip of my comp or any other site)/directory name/php script
+    String login_url = "http://2f1a2ffe.ngrok.io/GPSAttendance/welcome/login";// "http://61.246.165.5/GPSAttendance/welcome/login";
+    String gps_url = "http://2f1a2ffe.ngrok.io/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"
+    String forget_password_url = "http://2f1a2ffe.ngrok.io/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
+    //SERVER IP: http://61.246.165.5
 
     public BackgroundTask(Context contx) {
         this.contx = contx;
@@ -186,16 +187,18 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String imeigps, message, location, imageFlag, captImage, locationFlag;
+                String imeigps, message, lat,lon, imageFlag, captImage, locationFlag;
                 imeigps = params[1];
                 message = params[2];
-                location = params[3];
-                imageFlag = params[4];
-                captImage = params[5];
-                locationFlag = params[6];
+                lat = params[3];
+                lon=params[4];
+                imageFlag = params[5];
+                captImage = params[6];
+                locationFlag = params[7];
                 String data = URLEncoder.encode("imei", "UTF-8") + "=" + URLEncoder.encode(imeigps, "UTF-8") + "&" +
                         URLEncoder.encode("Report", "UTF-8") + "=" + URLEncoder.encode(message, "UTF-8") + "&" +
-                        URLEncoder.encode("location", "UTF-8") + "=" + URLEncoder.encode(location, "UTF-8") + "&" +
+                        URLEncoder.encode("lat", "UTF-8") + "=" + URLEncoder.encode(lat, "UTF-8") + "&" +
+                        URLEncoder.encode("lng", "UTF-8") + "=" + URLEncoder.encode(lon, "UTF-8") + "&" +
                         URLEncoder.encode("imageflag", "UTF-8") + "=" + URLEncoder.encode(imageFlag, "UTF-8") + "&" +
                         URLEncoder.encode("image", "UTF-8") + "=" + URLEncoder.encode(captImage, "UTF-8") + "&" +
                         URLEncoder.encode("locationflag", "UTF-8") + "=" + URLEncoder.encode(locationFlag, "UTF-8");

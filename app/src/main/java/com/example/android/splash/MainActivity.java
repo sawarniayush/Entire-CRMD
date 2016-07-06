@@ -261,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements
      */
     public void fetchAddressButtonHandler(View view) {
         // We only start the service to fetch the address if GoogleApiClient is connected.
-        time1 = System.currentTimeMillis();
+        //time1 = System.currentTimeMillis();
         if (mGoogleApiClient.isConnected() && mLastLocation != null) {
             startIntentService();
         }
@@ -318,18 +318,33 @@ public class MainActivity extends AppCompatActivity implements
      */
     protected void startIntentService() {
         // Create an intent for passing to the intent service responsible for fetching the address.
-        Intent intent = new Intent(this, FetchAddressIntentService.class);
+        //Intent intent = new Intent(this, FetchAddressIntentService.class);
 
         // Pass the result receiver as an extra to the service.
-        intent.putExtra(Constants.RECEIVER, mResultReceiver);
+       // intent.putExtra(Constants.RECEIVER, mResultReceiver);
 
         // Pass the location data as an extra to the service.
-        intent.putExtra(Constants.LOCATION_DATA_EXTRA, mLastLocation);
+        //intent.putExtra(Constants.LOCATION_DATA_EXTRA, mLastLocation);
 
         // Start the service. If the service isn't already running, it is instantiated and started
         // (creating a process for it if needed); if it is running then it remains running. The
         // service kills itself automatically once all intents are processed.
-        startService(intent);
+
+        //startService(intent);
+        double latitude = mLastLocation.getLatitude();
+        double longitude = mLastLocation.getLongitude();
+        BackgroundTask bktask = new BackgroundTask(MainActivity.this);
+        String loc = Double.toString(latitude) + " , " + Double.toString(longitude);
+        TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+        String imei = tm.getDeviceId();
+        String msg = et.getText().toString();
+        mProgressBar.setVisibility(ProgressBar.GONE);
+        if (capt_image.equals("empty"))
+            bktask.execute("gps", imei, msg, ""+latitude,""+longitude, "false", "", "false");
+        else
+            bktask.execute("gps", imei, msg,""+latitude,""+longitude, "true", capt_image, "false");
+
+
 
     }
 
@@ -496,10 +511,11 @@ public class MainActivity extends AppCompatActivity implements
             double longitude = nwLocation.getLongitude();
             bktask = new BackgroundTask(MainActivity.this);
             String loc = Double.toString(latitude) + " , " + Double.toString(longitude);
+            mProgressBar.setVisibility(ProgressBar.GONE);
             if (capt_image.equals("empty"))
-                bktask.execute("gps", imei, msg, loc, "false", "", "false");
+                bktask.execute("gps", imei, msg, Double.toString(latitude),Double.toString(longitude), "false", "", "false");
             else
-                bktask.execute("gps", imei, msg, loc, "true", capt_image, "false");
+                bktask.execute("gps", imei, msg, Double.toString(latitude),Double.toString(longitude), "true", capt_image, "false");
         }
 
             // Reset. Enable the Fetch Address button and stop showing the progress bar.
