@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements
         mResultReceiver = new AddressResultReceiver(new Handler());
 
         //mLocationAddressTextView = (TextView) findViewById(R.id.location_address_view);
-        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
+//        mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         mFetchAddressButton = (Button) findViewById(R.id.fetch_address_button);
         et = (EditText) findViewById(R.id.edit);
         // Set defaults, then update using values stored in the Bundle.
@@ -338,7 +338,8 @@ public class MainActivity extends AppCompatActivity implements
         TelephonyManager tm = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
         String imei = tm.getDeviceId();
         String msg = et.getText().toString();
-        mProgressBar.setVisibility(ProgressBar.GONE);
+//        mProgressBar.setVisibility(ProgressBar.GONE);
+        Toast.makeText(MainActivity.this, "Location retrieved form GPS", Toast.LENGTH_SHORT).show();
         if (capt_image.equals("empty"))
             bktask.execute("gps", imei, msg, ""+latitude,""+longitude, "false", "", "false");
         else
@@ -375,13 +376,13 @@ public class MainActivity extends AppCompatActivity implements
      */
     private void updateUIWidgets() {
         if (mAddressRequested) {
-            mProgressBar.setVisibility(ProgressBar.VISIBLE);
+//            mProgressBar.setVisibility(ProgressBar.VISIBLE);
             mFetchAddressButton.setEnabled(false);
             et.setEnabled(false);
             et.setFocusable(false);
 
         } else {
-            mProgressBar.setVisibility(ProgressBar.GONE);
+//            mProgressBar.setVisibility(ProgressBar.GONE);
             mFetchAddressButton.setEnabled(true);
             et.setEnabled(true);
             et.setFocusable(true);
@@ -511,7 +512,8 @@ public class MainActivity extends AppCompatActivity implements
             double longitude = nwLocation.getLongitude();
             bktask = new BackgroundTask(MainActivity.this);
             String loc = Double.toString(latitude) + " , " + Double.toString(longitude);
-            mProgressBar.setVisibility(ProgressBar.GONE);
+            Toast.makeText(MainActivity.this, "Location retrieved form Network", Toast.LENGTH_SHORT).show();
+//            mProgressBar.setVisibility(ProgressBar.GONE);
             if (capt_image.equals("empty"))
                 bktask.execute("gps", imei, msg, Double.toString(latitude),Double.toString(longitude), "false", "", "false");
             else
