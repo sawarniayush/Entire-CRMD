@@ -265,6 +265,8 @@ public class MainActivity extends AppCompatActivity implements
         if (mGoogleApiClient.isConnected() && mLastLocation != null) {
             startIntentService();
         }
+        else
+            NWloc();
         // If GoogleApiClient isn't connected, we process the user's request by setting
         // mAddressRequested to true. Later, when GoogleApiClient connects, we launch the service to
         // fetch the address. As far as the user is concerned, pressing the Fetch Address button
@@ -354,7 +356,7 @@ public class MainActivity extends AppCompatActivity implements
         // Refer to the javadoc for ConnectionResult to see what error codes might be returned in
         // onConnectionFailed.
         Log.i(TAG, "Connection failed: ConnectionResult.getErrorCode() = " + result);
-        NWloc();
+
     }
 
 
