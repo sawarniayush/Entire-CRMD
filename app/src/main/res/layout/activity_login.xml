@@ -94,7 +94,8 @@
                 android:textColor="@color/textColor"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:theme="@style/RedCheck" />
+                android:theme="@style/RedCheck"
+                android:checked="false" />
 
 
             <TextView

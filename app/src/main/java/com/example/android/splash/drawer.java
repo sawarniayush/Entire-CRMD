@@ -1,5 +1,7 @@
 package com.example.android.splash;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -85,9 +87,12 @@ public class drawer extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.previousReport) {
+            PrevFrag prev=new PrevFrag();
+            manager.beginTransaction().replace(R.id.FragmentHolder, prev).commit();
             // Handle the camera action
         } else if (id == R.id.fileReport) {
-
+            MainFragment main=new MainFragment();
+            manager.beginTransaction().replace(R.id.FragmentHolder, main).commit();
         } else if (id == R.id.profile) {
             HomeFrag completedFragment= new HomeFrag();
             manager.beginTransaction().replace(R.id.FragmentHolder, completedFragment).commit();
@@ -96,6 +101,12 @@ public class drawer extends AppCompatActivity
 
 
         } else if (id == R.id.logout) {
+            SharedPreferences loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+            SharedPreferences.Editor loginPrefsEditor = loginPreferences.edit();
+            loginPrefsEditor.putBoolean("saveLogin", false);
+            Intent i = new Intent(drawer.this, LoginActivity.class);
+            startActivity(i);
+            finish();
 
         }
 

@@ -1,6 +1,7 @@
 package com.example.android.splash;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -33,17 +34,23 @@ public class Splash extends AppCompatActivity {
         TranslateAnimation tanim = new TranslateAnimation(0.0f, 1220.0f, 0.0f, 0.0f);
         tanim.setDuration(6000);
         tanim.setRepeatCount(0);
-        Thread timer = new Thread(){
-            public void run(){
-                try{
+        Thread timer = new Thread() {
+            public void run() {
+                try {
                     sleep(5000);
-                }catch(InterruptedException e){
+                } catch (InterruptedException e) {
                     e.printStackTrace();
-                }finally{
+                } finally {
                     /*Intent openMainActivity= new Intent("com.coderefer.androidsplashscreenexample.MAINACTIVITY");
                     startActivity(openMainActivity);*/
-                    Intent i = new Intent(Splash.this,LoginActivity.class);
-                    startActivity(i);
+                    SharedPreferences loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+                    if (loginPreferences.getBoolean("saveLogin", false)) {
+                        Intent i = new Intent(Splash.this, drawer.class);
+                        startActivity(i);
+                    } else {
+                        Intent i = new Intent(Splash.this, LoginActivity.class);
+                        startActivity(i);
+                    }
                 }
             }
         };

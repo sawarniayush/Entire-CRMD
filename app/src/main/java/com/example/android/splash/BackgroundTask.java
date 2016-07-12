@@ -351,6 +351,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                     intent.putExtra("dept", dept);
 
                     activity.startActivity(intent);
+                    activity.finish();
                     progressDialog.dismiss();
                 } else if (code.equals("login_false")) {
                     String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
