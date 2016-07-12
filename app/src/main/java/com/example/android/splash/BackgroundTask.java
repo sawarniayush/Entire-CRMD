@@ -345,7 +345,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                         sString[i] = js.getString(i);
                     }
 
-                    Intent intent = new Intent(activity, HomeActivity.class);
+                    Intent intent = new Intent(activity, Drawer.class);
                     // to attach message to the intent from  the server
                     intent.putExtra("name", name);
                     intent.putExtra("dept", dept);

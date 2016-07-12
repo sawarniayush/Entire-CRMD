@@ -18,20 +18,11 @@ public class Splash extends AppCompatActivity {
         setContentView(R.layout.splash);
         ImageView im = (ImageView) findViewById(R.id.imageView);
         im.setImageResource(R.drawable.log2);
-        Display display = getWindowManager().getDefaultDisplay();
-        DisplayMetrics outMetrics = new DisplayMetrics();
-        display.getMetrics(outMetrics);
-
-        float density = getResources().getDisplayMetrics().density;
-        float dpHeight = outMetrics.heightPixels / density;
-        float dpWidth = outMetrics.widthPixels / density;
-        Log.v("parameters:", Float.toString(dpWidth));
-        Log.v("parameters:", Float.toString(dpHeight));
         // final ImageView iv = (ImageView) findViewById(R.id.imageView2);
         // final Animation an = AnimationUtils.loadAnimation(getBaseContext(),R.anim.abc_fade_in);
         ImageView imgview = (ImageView) findViewById(R.id.imageView2);
         TranslateAnimation tanim = new TranslateAnimation(0.0f, 1220.0f, 0.0f, 0.0f);
-        tanim.setDuration(6000);
+        tanim.setDuration(4000);
         tanim.setRepeatCount(0);
         Thread timer = new Thread(){
             public void run(){
