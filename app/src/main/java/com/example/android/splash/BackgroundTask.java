@@ -11,6 +11,8 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.android.splash.data.DBHelper;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +36,7 @@ import java.net.URLEncoder;
 public class BackgroundTask extends AsyncTask<String, Void, String> {
     // first argument tell us that parameter type is String
     Context contx;
+    public static boolean network=false;
     Activity activity;
     //    public static JSONArray supervisor;
     public static String[] sString;
@@ -42,6 +45,7 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     String login_url = "http://61.246.165.5/GPSAttendance/welcome/login";// "http://61.246.165.5/GPSAttendance/welcome/login";
     String gps_url = "http://61.246.165.5/GPSAttendance/welcome/report"; //"http://61.246.165.5/GPSAttendance/welcome/report"
     String forget_password_url = "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";// "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword"; "http://61.246.165.5/GPSAttendance/welcome/Task_ResetPassword";
+    String ping_url = "http://61.246.165.5/GPSAttendance/welcome/ping";
     AlertDialog.Builder builder;  // to alert the user
     ProgressDialog progressDialog;  // to show the progress
     //SERVER IP: http://61.246.165.5
@@ -285,6 +289,54 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
             }
 
         }
+        else if (method.equals("ping")) // if the command is to register then we will establish connection to the server, i.e params[0] = "register"
+        {
+            try { // create a url connection using HttpURLconnection and use output stream to send data to the server
+                //Log.v("BackgroundTask","IMEI number is: " + imei);
+                URL url = new URL(ping_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8")); // last constructor of the documentation
+                String ping=params[1];
+                /*
+                 * URLEncoder is a separate class with encode(String s, String charsetName) -> Encodes s using the Charset named by charsetName.
+                 */
+                String data = URLEncoder.encode("ping", "UTF-8") + "=" + URLEncoder.encode(ping, "UTF-8");
+                bufferedWriter.write(data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();   // output stream has been used to send data to the server
+                /*
+                declare an input stream to get response from the server, whether the insertion is successful or not
+                the response will be in the form of a JSON builder object
+                 */
+
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                StringBuilder stringBuilder = new StringBuilder();
+                String line = "";  // just a variable to read data from each line
+                while ((line = bufferedReader.readLine()) != null) {  // the response received will be written in the php code after checking the required conditions
+                    stringBuilder.append(line + "\n");
+                }
+                httpURLConnection.disconnect();
+                try {
+                    Thread.sleep(500); // to give a pause for the "connecting to  the server" effect
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return stringBuilder.toString().trim(); // appropriate message (Registration successful or failed or already exists is displayed)
+
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
 
         return null; // this might be causing the shutdown of app
     }
@@ -302,10 +354,13 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String json) {
         // Log.v("sdfsdf","Back");
         if (json == null) {
-            String error_message = "Some Error has occurred. Please check you internet connection.";
-            //showDialog("Login failed", error_message, "net_fail");
-            Toast.makeText(this.activity, error_message, Toast.LENGTH_LONG).show();
-            progressDialog.dismiss();
+                network=false;
+                String error_message = "Some Error has occurred. Please check you internet connection.";
+
+                //showDialog("Login failed", error_message, "net_fail");
+                Toast.makeText(this.activity, error_message, Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
+
         } else {
             try {
                 // first we need to dismiss the
@@ -368,6 +423,10 @@ public class BackgroundTask extends AsyncTask<String, Void, String> {
                     String message = JO.getString("message"); // message as the key, getString will return the value from the key:value pair
                     showDialog("", message, code);
                     progressDialog.dismiss();
+                }
+                  else if(code.equals("true"))
+                {
+                    network=true;
                 }
 
 

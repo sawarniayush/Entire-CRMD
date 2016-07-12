@@ -40,6 +40,9 @@ public class Splash extends AppCompatActivity {
         };
         timer.start();
         imgview.startAnimation(tanim);
+
+        BackgroundTask bk=new BackgroundTask(this);
+        bk.execute("ping","done");
     }
 
     @Override

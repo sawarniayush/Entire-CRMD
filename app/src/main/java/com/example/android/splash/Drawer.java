@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class Drawer extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,6 +39,12 @@ public class Drawer extends AppCompatActivity
         manager=getSupportFragmentManager();
         HomeFrag homeFragment= new HomeFrag();
         manager.beginTransaction().replace(R.id.fragment_holder, homeFragment).commit();
+
+        ConnectionDetector cd=new ConnectionDetector(this);
+        if(!cd.isConnectingToInternet())
+        {
+            Toast.makeText(this,"You are currently offline. Try reestablishing you internet connection or submit report offline.",Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

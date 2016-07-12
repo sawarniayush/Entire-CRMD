@@ -40,6 +40,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.android.splash.data.DBHelper;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
@@ -342,11 +343,18 @@ public class MainActivity extends AppCompatActivity implements
         String msg = et.getText().toString();
 //        mProgressBar.setVisibility(ProgressBar.GONE);
         Toast.makeText(MainActivity.this, "Location retrieved form GPS", Toast.LENGTH_SHORT).show();
-        if (capt_image.equals("empty"))
-            bktask.execute("gps", imei, msg, ""+latitude,""+longitude, "false", "", "false");
+        if(BackgroundTask.network)
+        {
+            if (capt_image.equals("empty"))
+                bktask.execute("gps", imei, msg, ""+latitude,""+longitude, "false", "", "false");
+            else
+                bktask.execute("gps", imei, msg,""+latitude,""+longitude, "true", capt_image, "false");
+        }
         else
-            bktask.execute("gps", imei, msg,""+latitude,""+longitude, "true", capt_image, "false");
-
+        {
+            DBHelper db=new DBHelper(this);
+            db.insertReport_pending(msg,Double.toString(latitude),Double.toString(longitude),imei,capt_image);
+        }
 
 
     }
