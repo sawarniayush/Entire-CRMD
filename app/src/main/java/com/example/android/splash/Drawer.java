@@ -63,7 +63,7 @@ public class Drawer extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        manager=getSupportFragmentManager();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -80,10 +80,14 @@ public class Drawer extends AppCompatActivity
 
         if (id == R.id.pending_report)
         {
+            PrevFrag prevFrag= new PrevFrag();
+            manager.beginTransaction().replace(R.id.fragment_holder, prevFrag).commit();
 
         } else if (id == R.id.file_report) {
 
         } else if (id == R.id.profile) {
+            HomeFrag homeFragment= new HomeFrag();
+            manager.beginTransaction().replace(R.id.fragment_holder, homeFragment).commit();
 
         } else if (id == R.id.log_out) {
 
